@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- 
+        近2周实践要求：
+
+        ex4.js完成任务：
+        1、添加video标记，并设置视频播放路径为video/demo4.mp4
+        2、video下方添加【播放】按钮，单击【播放】可播放视频，并且【播放】按钮文本变为【暂停】按钮，单击【暂停】可暂停播放
+        3、按照demo5.mp4视频中的做题框设计做题框的html结构和css，并且设置做题框默认为隐藏（display:none或者visibility:hidden)
+        
+        ex5.js完成任务：
+        1、网页加载后开始播放视频，播放到INTERVAL间隔后出现做题框，题目发ajax请求，请求文件为data下的questions.json文件，
+        json里面有单选和复选，题目是随机抽取1题动态显示到做题框中；
+        2、做题框中单击选项后单击【确认提交】按钮，回答正确，显示绿色的“回答正确”；回答错误，则显示红色的“回答错误”；单击圆形的【X】按钮关闭
+        做题框；
+        3、如果回答正确，视频继续播放，如果回答错误，视频重新开始播放。
+     -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频学习</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <video id = "video"src="video/demo4.mp4" controls></video>
+    </div>
+    <!-- 此处设计题目框 -->
+    <div class="do-question">
+        <div class="top">
+            <button id="close">X</button>
+        </div>
+        <div class="content">
+            <h1>1.题目内容</h1>
+        </div>  
+        <div class="operation">
+            <div class="option">
+                <ul>
+                    <li>question 1</li>
+                    <li>question 2</li>
+                </ul>
+                <div class="buttons">
+                    <button id = "btnOK">确认提交</button>
+                    <div id="result"></div>
+                </div>
+            </div>
+            <div class="ans">
+                <ul>
+                    <li><span class="title">参考答案</span><span class="value" id="refAns"></span></li>
+                    <li><span class="title">解析</span><span class="value" id="refAnlysis"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button id="plvideo">播放</button>
+    <!-- 引入jQuery库 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 引入动画函数的polyFill版 -->
+    <script src="js/requestNextAnimationFrame.js"></script>
+    <!-- 引入本次实验js（ex4.js、ex5.js） -->
+    <script src="js/ex4.js"></script>
+</body>
+
+</html>
