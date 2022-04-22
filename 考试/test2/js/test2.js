@@ -20,7 +20,7 @@
 */
 var NUMS=15;  
 var rndArr=[0,0];  //保存2个随机索引值
-
+var a;
 var refAns="";  //正确答案
 var userAns="";  //用户选择答案
 
